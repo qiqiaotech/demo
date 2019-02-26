@@ -1,9 +1,12 @@
 package com.example.demo.sr.core;
 
 import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.stereotype.Service;
 
+@Service
 public class DynamicDIClass implements ApplicationContextAware {
 
     private String value ="";
@@ -34,6 +37,7 @@ public class DynamicDIClass implements ApplicationContextAware {
         clzB.getValue();
     }
 
+    @Autowired
     public DynamicDIClass() {
         System.out.println("DynamicDIClass output");
     }

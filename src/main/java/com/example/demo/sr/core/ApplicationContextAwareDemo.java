@@ -5,6 +5,7 @@ import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.context.annotation.Bean;
 import org.springframework.core.Ordered;
 import org.springframework.stereotype.Service;
 
@@ -43,5 +44,10 @@ public class ApplicationContextAwareDemo implements ApplicationContextAware, Bea
     @Override
     public int getOrder() {
         return 0;
+    }
+
+    @Bean(name="testBean")
+    public DIBeanAnnoClass injectDIBeanAnnoClass() {
+        return new DIBeanAnnoClass();
     }
 }

@@ -29,6 +29,9 @@ public class DynamicDIClass implements ApplicationContextAware {
     @Autowired     //List自动注入DIInterface接口的两个实现类实例
     private List<DIInterface> listDIInterface;
 
+    @Autowired
+    private SpringDynamicService springDynamicService;
+
     public void setValue(String value) {
         this.value = value;
     }
@@ -68,6 +71,9 @@ public class DynamicDIClass implements ApplicationContextAware {
         for(DIInterface item : listDIInterface) {
             System.out.println(item.getClass().getName());
         }
+
+        //spring proxy输出测试
+        springDynamicService.testSpringProxy();
     }
 
     public DynamicDIClass(DIClass diClass) {
